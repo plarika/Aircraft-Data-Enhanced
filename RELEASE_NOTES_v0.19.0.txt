@@ -1,0 +1,3 @@
+Aircraft Data Enhanced v0.19.0-beta
+
+Source-only GitHub release; no SDR# SDK binaries or real capture fixtures.

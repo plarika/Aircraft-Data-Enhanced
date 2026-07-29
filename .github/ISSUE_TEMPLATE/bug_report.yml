@@ -1,0 +1,27 @@
+name: Bug report
+description: Report a sanitized reproducible problem
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: Do not attach SDK DLLs, databases, captures, private communications, credentials or personal paths.
+  - type: input
+    id: version
+    attributes:
+      label: Plugin version
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem and reproduction using synthetic/redacted data
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy
+      options:
+        - label: I removed personal data, private communications and proprietary binaries.
+          required: true
