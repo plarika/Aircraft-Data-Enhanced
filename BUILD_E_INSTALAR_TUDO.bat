@@ -33,21 +33,7 @@ echo Build - %DATE% %TIME% > "%LOG%"
 where py >nul 2>&1
 if not errorlevel 1 (
   py -3 "%~dp0tools\validate_csharp_strings.py" "%~dp0src"
-  if errorlevel 1 goto 
-:missing_sdrsharp_sdk
-echo.
-echo [ERRO] Faltam as referencias oficiais do SDR#:
-echo   lib\SDRSharp.Common.dll
-echo   lib\SDRSharp.Radio.dll
-echo.
-echo Obtenha "SDR# SDK for Plugin Developers" em:
-echo   https://airspy.com/download/
-echo.
-echo Copie as DLL para lib. Pode executar GET_SDRSHARP_SDK.bat.
-pause
-exit /b 1
-
-:validation_failed
+  if errorlevel 1 goto :validation_failed
   py -3 "%~dp0tools\validate_d8psk_analyzer.py" "%~dp0src\D8pskSymbolAnalyzer.cs"
   if errorlevel 1 goto :validation_failed
   py -3 "%~dp0tools\validate_csharp_structure.py" "%~dp0src"
@@ -204,6 +190,19 @@ echo %%LOCALAPPDATA%%\AircraftDataEnhanced\aircraft-history.sqlite3
 echo.
 pause
 exit /b 0
+
+:missing_sdrsharp_sdk
+echo.
+echo [ERRO] Faltam as referencias oficiais do SDR#:
+echo   lib\SDRSharp.Common.dll
+echo   lib\SDRSharp.Radio.dll
+echo.
+echo Obtenha "SDR# SDK for Plugin Developers" em:
+echo   https://airspy.com/download/
+echo.
+echo Copie as DLL para lib. Pode executar GET_SDRSHARP_SDK.bat.
+pause
+exit /b 1
 
 :validation_failed
 echo.
