@@ -12,10 +12,12 @@ jobs:
   source-audit:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
+      - name: Install Python test dependencies
+        run: python -m pip install --disable-pip-version-check -r tools/requirements.txt
       - run: python tools/audit_public_repository.py . --strict-public
       - run: python tools/validate_p2_stable.py .
       - run: |
@@ -25,19 +27,35 @@ jobs:
 
   windows-build-and-tests:
     runs-on: windows-latest
+    env:
+      DOTNET_INSTALL_DIR: ${{ runner.temp }}\dotnet-x86
+      DOTNET_ROOT_X86: ${{ runner.temp }}\dotnet-x86
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-dotnet@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-dotnet@v5
         with:
           dotnet-version: "9.0.316"
+          architecture: x86
+      - name: Verify x86 .NET host
+        shell: pwsh
+        run: |
+          Write-Host "DOTNET_INSTALL_DIR=$env:DOTNET_INSTALL_DIR"
+          Write-Host "DOTNET_ROOT_X86=$env:DOTNET_ROOT_X86"
+          & "$env:DOTNET_INSTALL_DIR\dotnet.exe" --info
       - name: Build compile-only SDR# contracts
         shell: pwsh
         run: |
-          dotnet build .\tools\ci-sdrsharp-stubs\SDRSharp.Radio\SDRSharp.Radio.csproj -c Release
-          dotnet build .\tools\ci-sdrsharp-stubs\SDRSharp.Common\SDRSharp.Common.csproj -c Release
+          & "$env:DOTNET_INSTALL_DIR\dotnet.exe" build .\tools\ci-sdrsharp-stubs\SDRSharp.Radio\SDRSharp.Radio.csproj -c Release
+          & "$env:DOTNET_INSTALL_DIR\dotnet.exe" build .\tools\ci-sdrsharp-stubs\SDRSharp.Common\SDRSharp.Common.csproj -c Release
           New-Item -ItemType Directory -Force .\lib | Out-Null
           Copy-Item .\tools\ci-sdrsharp-stubs\SDRSharp.Radio\bin\Release\net9.0-windows\SDRSharp.Radio.dll .\lib\SDRSharp.Radio.dll -Force
           Copy-Item .\tools\ci-sdrsharp-stubs\SDRSharp.Common\bin\Release\net9.0-windows\SDRSharp.Common.dll .\lib\SDRSharp.Common.dll -Force
-      - run: dotnet restore .\AircraftDataEnhanced.sln -p:Platform=x86
-      - run: dotnet build .\AircraftDataEnhanced.sln -c Release -p:Platform=x86 --no-restore
-      - run: dotnet run --project .\tests\AircraftDataEnhanced.Tests\AircraftDataEnhanced.Tests.csproj -c Release -p:Platform=x86 --no-build
+      - name: Restore solution
+        shell: pwsh
+        run: '& "$env:DOTNET_INSTALL_DIR\dotnet.exe" restore .\AircraftDataEnhanced.sln -p:Platform=x86'
+      - name: Build solution
+        shell: pwsh
+        run: '& "$env:DOTNET_INSTALL_DIR\dotnet.exe" build .\AircraftDataEnhanced.sln -c Release -p:Platform=x86 --no-restore'
+      - name: Run C# regression suite
+        shell: pwsh
+        run: '& "$env:DOTNET_INSTALL_DIR\dotnet.exe" run --project .\tests\AircraftDataEnhanced.Tests\AircraftDataEnhanced.Tests.csproj -c Release -p:Platform=x86 --no-build'

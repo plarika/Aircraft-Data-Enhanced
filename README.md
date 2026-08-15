@@ -82,7 +82,7 @@ tools/      validators, CI stubs and release tooling
 testdata/   synthetic/golden test vectors
 sdk/        compatibility metadata only
 lib/        local SDR# SDK location; binaries are ignored
-docs/       documentation and neutral UI previews
+docs/       documentation and real UI screenshots
 .github/    CI, issue templates and dependency automation
 ```
 
