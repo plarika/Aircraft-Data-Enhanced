@@ -40,14 +40,29 @@ jobs:
       - name: Configure and verify x86 .NET host
         shell: pwsh
         run: |
-          if (-not $env:DOTNET_INSTALL_DIR) {
-            throw 'setup-dotnet did not export DOTNET_INSTALL_DIR.'
+          if (-not $env:DOTNET_ROOT) {
+            throw 'setup-dotnet did not export DOTNET_ROOT.'
           }
-          "DOTNET_ROOT_X86=$env:DOTNET_INSTALL_DIR" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
-          Write-Host "DOTNET_INSTALL_DIR=$env:DOTNET_INSTALL_DIR"
+
+          $expectedDotnet = Join-Path $env:DOTNET_ROOT 'dotnet.exe'
+          if (-not (Test-Path -LiteralPath $expectedDotnet)) {
+            throw "x86 dotnet.exe not found under DOTNET_ROOT: $expectedDotnet"
+          }
+
+          $resolvedDotnet = (Get-Command dotnet -ErrorAction Stop).Source
+          $expectedFull = [System.IO.Path]::GetFullPath($expectedDotnet)
+          $resolvedFull = [System.IO.Path]::GetFullPath($resolvedDotnet)
+
           Write-Host "DOTNET_ROOT=$env:DOTNET_ROOT"
-          Write-Host "DOTNET_ROOT_X86=$env:DOTNET_INSTALL_DIR"
-          where.exe dotnet
+          Write-Host "Resolved dotnet=$resolvedFull"
+          Write-Host "Expected x86 dotnet=$expectedFull"
+
+          if (-not $resolvedFull.Equals($expectedFull, [System.StringComparison]::OrdinalIgnoreCase)) {
+            throw "dotnet on PATH is not the x86 host installed by setup-dotnet."
+          }
+
+          "DOTNET_ROOT_X86=$env:DOTNET_ROOT" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
+          Write-Host "DOTNET_ROOT_X86=$env:DOTNET_ROOT"
           dotnet --info
 
       - name: Build compile-only SDR# contracts
