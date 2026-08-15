@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "targetFramework": "net9.0-windows",
+  "platform": "x86",
+  "targets": [
+    {
+      "host": "SDR# production x86",
+      "revision": 1921,
+      "status": "validated-stable",
+      "source": "https://airspy.com/download/"
+    },
+    {
+      "host": "SDR# beta x86",
+      "revision": 1922,
+      "status": "targeted-unverified",
+      "source": "https://airspy.com/download/"
+    }
+  ],
+  "requiredAssemblies": [
+    "SDRSharp.Common.dll",
+    "SDRSharp.Radio.dll"
+  ],
+  "approvalRule": "A local SDK pair is approved only after a successful build, test run and host smoke test; exact SHA-256 values are recorded in approved-sdks.local.json."
+}

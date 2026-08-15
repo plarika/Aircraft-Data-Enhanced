@@ -1,67 +1,118 @@
-# Aircraft Data Enhanced
+# Aircraft Data Enhanced v1.0.0 Stable
 
-**Receive-only VDL2 / AVLC / ACARS plugin for SDR# .NET 9 x86**
+Receive-only VDL2, AVLC and ACARS monitoring plugin for SDR# .NET 9 on Windows x86.
 
-Public beta `v0.19.0-beta` with an Air Operations Terminal, verified-aircraft
-sessions and embedded SQLite history.
+![Aircraft Data Enhanced overview](docs/screenshots/overview-dark.png)
 
-## Features
+## Highlights
 
-- local IQ processing without audio loopback;
-- D8PSK VDL2 demodulation;
-- physical header, descrambling and RS(255,249);
-- HDLC unstuffing and AVLC FCS validation;
-- ACARS envelope parsing;
-- verified ICAO24-only views and active sessions;
-- airport-style Operations Board;
-- local SQLite history;
-- bounded workers and anti-freeze waterfall;
-- receive-only operation.
+- Native Windows Forms dashboard integrated into SDR#.
+- Live VDL2/AVLC/ACARS decoding with verified-aircraft filtering.
+- Active-aircraft sessions, message inspection and local SQLite history.
+- Aircraft identity enrichment through ADSBdb with HexDB fallback.
+- Spectrum and waterfall views driven by the plugin IQ pipeline.
+- JSONL export with start/stop control from the main navigation.
+- Settings toggle for the top status strip (`System Status`, `Decoder`, `Waterfall`, `Data`).
+- Responsive full-width workspaces for Aircraft, Messages, History and Diagnostics.
+- Receive-only design; no transmit/control path.
 
-## Safety and law
+## UI previews
 
-Research/hobby use only. Not for ATC, navigation or safety decisions. Read
-[`LEGAL.md`](LEGAL.md) and [`PRIVACY.md`](PRIVACY.md).
+| Overview | Aircraft details | Messages and waterfall |
+|---|---|---|
+| ![Overview](docs/screenshots/overview-dark.png) | ![Aircraft details](docs/screenshots/aircraft-details.png) | ![Messages and waterfall](docs/screenshots/messages-waterfall.png) |
 
-## Requirements and official SDR# SDK
+The images above are neutral UI previews and contain no usernames, local paths, receiver coordinates or captured user data.
 
-Airspy binaries are not included. Visit https://airspy.com/download/, locate
-**SDR# SDK for Plugin Developers**, and copy these files into `lib/`:
+## Requirements
+
+- Windows x86 SDR# .NET 9 host.
+- .NET SDK `9.0.316` for building from source.
+- Python 3.10 or newer for validation scripts.
+- Official **SDR# SDK for Plugin Developers** from Airspy.
+
+The SDR# SDK DLLs are intentionally **not included** in this repository. Obtain the official SDK from `https://airspy.com/download/`, then place:
 
 ```text
-SDRSharp.Common.dll
-SDRSharp.Radio.dll
+lib/SDRSharp.Common.dll
+lib/SDRSharp.Radio.dll
 ```
 
-The DLLs are ignored by Git and must not be committed. You may run
-`GET_SDRSHARP_SDK.bat` to open the official page.
+The stable SDK fingerprint currently validated for the production host is SDR# revision **1921**. See `sdk/approved-sdks.json` and `sdk/compatibility-matrix.json`.
 
 ## Build and install
 
-Close SDR# and run `BUILD_E_INSTALAR_TUDO.bat`. It validates, restores SQLite
-from NuGet, builds for `win-x86`, and installs the complete output.
+1. Copy the two official SDR# SDK DLLs into `lib/`.
+2. Confirm the exact host/SDK pair with `PREPARAR_SDK_ESTAVEL.ps1` only when the SDR# host or SDK changes.
+3. Close SDR#.
+4. Run:
 
-## Local data
+```bat
+BUILD_E_INSTALAR_TUDO.bat
+```
 
-Runtime data is stored under `%LOCALAPPDATA%\AircraftDataEnhanced\` and is
-excluded by `.gitignore`.
+5. Select the SDR# installation directory when requested.
+6. Start SDR# and enable **Aircraft Data Enhanced**.
 
-## Licensing
+The build script runs the source validators, compiles the x86 solution, runs the C# regression suite, creates a binary manifest and installs the plugin into the selected SDR# `Plugins` directory.
 
-- original code and docs: MIT;
-- `src/ReedSolomon255249.cs`: LGPL-2.1-or-later.
+## Validation status
 
-See `LICENSES/README.md` and `THIRD_PARTY_NOTICES.md`. No SDR#, Airspy or NuGet
-binary is committed.
+The P2 core reached the stable gate after a formal 24-hour soak. The validated run completed with:
 
-## Documents
+- 86,400+ seconds runtime;
+- 1,286,810 IQ blocks received and processed;
+- 0 dropped IQ blocks;
+- 0 faulted IQ blocks;
+- 1,286,810 buffers rented and returned;
+- 160,851 valid JSONL records;
+- 160,851 matching SQLite messages;
+- SQLite `integrity_check=ok` and `quick_check=ok`;
+- 0 waterfall frame drops.
 
-- `docs/BUILD_FROM_SOURCE.md`
-- `docs/ARCHITECTURE.md`
-- `docs/TESTING.md`
-- `CONTRIBUTING.md`
-- `SECURITY.md`
-- `SUPPORT.md`
+Subsequent UI-only refinements were verified through builds, regression tests and interactive SDR# use. A new 24-hour soak is required only when the IQ pipeline, persistence layer or other long-running core behaviour changes.
 
-Independent project; no affiliation or endorsement by Airspy, SDR#, airports,
-airlines or aviation authorities.
+## Repository layout
+
+```text
+src/        Core, Persistence and SDR# adapter
+tests/      C# regression suite
+tools/      validators, CI stubs and release tooling
+testdata/   synthetic/golden test vectors
+sdk/        compatibility metadata only
+lib/        local SDR# SDK location; binaries are ignored
+docs/       documentation and neutral UI previews
+.github/    CI, issue templates and dependency automation
+```
+
+## Privacy and release hygiene
+
+Public source releases exclude:
+
+- SDR# proprietary SDK DLLs;
+- usernames, personal email addresses and absolute user-profile paths;
+- receiver coordinates and private configuration;
+- runtime logs and aircraft lookup logs;
+- SQLite databases and JSONL exports;
+- IQ/audio/video captures;
+- `bin`, `obj`, `.vs`, `artifacts` and Python caches.
+
+Create a clean public archive with:
+
+```powershell
+.\PREPARAR_RELEASE_LIMPA.ps1
+```
+
+The script builds the release from a temporary staging copy, so it does not delete the local SDK DLLs from the developer workspace.
+
+## Online enrichment
+
+Aircraft identity enrichment may use ADSBdb and HexDB. These services are external to the project and can be unavailable, rate-limited, delayed or incomplete. The decoder and local history remain independent of successful online enrichment.
+
+## Safety and scope
+
+Aircraft Data Enhanced is a receive-only research/hobby tool. It is not an air-traffic-control, navigation, dispatch, emergency or safety-critical system. See `LEGAL.md`, `PRIVACY.md` and `SECURITY.md`.
+
+## Licence
+
+Project code is released under the licences identified by SPDX headers and the repository licence files. Third-party attributions are documented in `THIRD_PARTY_NOTICES.md` and `LICENSES/`.

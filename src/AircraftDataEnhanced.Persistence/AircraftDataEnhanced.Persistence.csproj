@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>AircraftDataEnhanced.Persistence</AssemblyName>
+    <RootNamespace>SDRSharp.AircraftDataEnhanced</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Description>SQLite, JSONL, capture and runtime data persistence.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AircraftDataEnhanced.Core\AircraftDataEnhanced.Core.csproj" />
+    <PackageReference Include="Microsoft.Data.Sqlite" />
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" />
+  </ItemGroup>
+</Project>

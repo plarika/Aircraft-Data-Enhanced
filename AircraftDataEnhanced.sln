@@ -1,0 +1,36 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AircraftDataEnhanced.Core", "src\AircraftDataEnhanced.Core\AircraftDataEnhanced.Core.csproj", "{2BB7D6B0-7AF0-4D7F-9AA8-2EF2064CA227}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AircraftDataEnhanced.Persistence", "src\AircraftDataEnhanced.Persistence\AircraftDataEnhanced.Persistence.csproj", "{B36ED6C8-FE23-4018-B954-84B96FA556D9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AircraftDataEnhanced.SdrSharpAdapter", "src\AircraftDataEnhanced.SdrSharpAdapter\AircraftDataEnhanced.SdrSharpAdapter.csproj", "{7CDED4FE-CFAF-48C3-AC00-7AFDDD7BAAAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AircraftDataEnhanced.Tests", "tests\AircraftDataEnhanced.Tests\AircraftDataEnhanced.Tests.csproj", "{522E3F6E-9BD6-469B-AEAC-358E9DA0F9BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BB7D6B0-7AF0-4D7F-9AA8-2EF2064CA227}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2BB7D6B0-7AF0-4D7F-9AA8-2EF2064CA227}.Debug|x86.Build.0 = Debug|Any CPU
+		{2BB7D6B0-7AF0-4D7F-9AA8-2EF2064CA227}.Release|x86.ActiveCfg = Release|Any CPU
+		{2BB7D6B0-7AF0-4D7F-9AA8-2EF2064CA227}.Release|x86.Build.0 = Release|Any CPU
+		{B36ED6C8-FE23-4018-B954-84B96FA556D9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B36ED6C8-FE23-4018-B954-84B96FA556D9}.Debug|x86.Build.0 = Debug|Any CPU
+		{B36ED6C8-FE23-4018-B954-84B96FA556D9}.Release|x86.ActiveCfg = Release|Any CPU
+		{B36ED6C8-FE23-4018-B954-84B96FA556D9}.Release|x86.Build.0 = Release|Any CPU
+		{7CDED4FE-CFAF-48C3-AC00-7AFDDD7BAAAE}.Debug|x86.ActiveCfg = Debug|x86
+		{7CDED4FE-CFAF-48C3-AC00-7AFDDD7BAAAE}.Debug|x86.Build.0 = Debug|x86
+		{7CDED4FE-CFAF-48C3-AC00-7AFDDD7BAAAE}.Release|x86.ActiveCfg = Release|x86
+		{7CDED4FE-CFAF-48C3-AC00-7AFDDD7BAAAE}.Release|x86.Build.0 = Release|x86
+		{522E3F6E-9BD6-469B-AEAC-358E9DA0F9BB}.Debug|x86.ActiveCfg = Debug|x86
+		{522E3F6E-9BD6-469B-AEAC-358E9DA0F9BB}.Debug|x86.Build.0 = Debug|x86
+		{522E3F6E-9BD6-469B-AEAC-358E9DA0F9BB}.Release|x86.ActiveCfg = Release|x86
+		{522E3F6E-9BD6-469B-AEAC-358E9DA0F9BB}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <AssemblyName>AircraftDataEnhanced.Core</AssemblyName>
+    <RootNamespace>SDRSharp.AircraftDataEnhanced</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Description>Protocol decoding, signal processing and domain logic.</Description>
+  </PropertyGroup>
+</Project>

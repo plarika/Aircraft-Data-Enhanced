@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <OutputType>Library</OutputType>
+    <AssemblyName>SDRSharp.Plugin.AircraftDataEnhanced</AssemblyName>
+    <RootNamespace>SDRSharp.AircraftDataEnhanced</RootNamespace>
+    <PlatformTarget>x86</PlatformTarget>
+    <Platforms>x86</Platforms>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Description>SDR# .NET 9 x86 plugin and WinForms adapter.</Description>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AircraftDataEnhanced.Core\AircraftDataEnhanced.Core.csproj" />
+    <ProjectReference Include="..\AircraftDataEnhanced.Persistence\AircraftDataEnhanced.Persistence.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="SDRSharp.Common">
+      <HintPath>..\..\lib\SDRSharp.Common.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SDRSharp.Radio">
+      <HintPath>..\..\lib\SDRSharp.Radio.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

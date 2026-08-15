@@ -1,0 +1,799 @@
+{
+  "schemaVersion": 1,
+  "name": "Aircraft Data Enhanced",
+  "version": "1.0.0",
+  "release": "v1.0.0 stable public source",
+  "dotnetSdk": "9.0.316",
+  "files": [
+    {
+      "path": ".editorconfig",
+      "length": 228,
+      "sha256": "bec43acd625e662dce83136e076261ed4261e9398f1639da977763886670f354"
+    },
+    {
+      "path": ".gitattributes",
+      "length": 139,
+      "sha256": "6b56c256bf6a2a89b9e0cc06cc6e50d423c15946e7a1d6de04f58480a9cdfc53"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/bug_report.yml",
+      "length": 732,
+      "sha256": "a835b3737d3e8f6d40f80a2bf61bdbf65dc5ff8f44bc89650797e66c9c0cf739"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/config.yml",
+      "length": 28,
+      "sha256": "1f103c6a9dd07cd13a9a6f17ace6b813f47747eb9cb7e00488cb2073caaf91bb"
+    },
+    {
+      "path": ".github/ISSUE_TEMPLATE/feature_request.yml",
+      "length": 433,
+      "sha256": "786e8119b4569cc904c1212cf4190f4b8e3c4606ee2215a3a31ba592ccbc3af3"
+    },
+    {
+      "path": ".github/PULL_REQUEST_TEMPLATE.md",
+      "length": 294,
+      "sha256": "de3b4e921fe059feccecb6df7b0982305f880cf5b23d8b16cadd5c9efe8f6ebf"
+    },
+    {
+      "path": ".github/dependabot.yml",
+      "length": 283,
+      "sha256": "e8eac2f689a3e6753fca744918545c277f52a26c792ce2917688a1c5aa24f274"
+    },
+    {
+      "path": ".github/workflows/source-audit.yml",
+      "length": 1700,
+      "sha256": "e83978b41534c2de029536ce3785881566d2b9d5b5b20091eca5d986d7702423"
+    },
+    {
+      "path": ".gitignore",
+      "length": 520,
+      "sha256": "428f27d4e31817547a488976cd6f659d0d1d43f9213a6333ad0d8ebee1dba93a"
+    },
+    {
+      "path": "AircraftDataEnhanced.sln",
+      "length": 2463,
+      "sha256": "e05a484ae2f9f55327324cbf1e1a6e041f67e84741f4a2e54b234909b3d0f0d4"
+    },
+    {
+      "path": "BUILD_E_INSTALAR_TUDO.bat",
+      "length": 4835,
+      "sha256": "a5661187c93b2e1b7190774b75856403ffbceb9f20fb8245e513a4d848eea98a"
+    },
+    {
+      "path": "CHANGELOG.md",
+      "length": 1918,
+      "sha256": "d709bcd9364930af282560cbe7751f02b7e66e6388b11f635560348050f62843"
+    },
+    {
+      "path": "CODE_OF_CONDUCT.md",
+      "length": 224,
+      "sha256": "db3e746a14f5ce1be44743c1491fe1ced0bab65af5cd2c5efed2d32ef693fe88"
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "length": 400,
+      "sha256": "8cf5c41974e88547f497de83eda81b8c0e3d67ebd1c67f5988827930fff3fb11"
+    },
+    {
+      "path": "Directory.Build.props",
+      "length": 795,
+      "sha256": "72261c3a11d077171cf769becc7bfa4c1d751f9638ffb0be7739b53e144abce7"
+    },
+    {
+      "path": "Directory.Packages.props",
+      "length": 403,
+      "sha256": "8aba6f334c17c0f5fe1c9f9318e57d13e536e5aeed22629a37824d4cc3ecedaa"
+    },
+    {
+      "path": "EXECUTAR_SOAK_24H.bat",
+      "length": 367,
+      "sha256": "75dd0eb7781845874db7a8900177b9fa036ae9197b32c083b541d933291ec9d9"
+    },
+    {
+      "path": "EXECUTAR_SOAK_SMOKE_5MIN.bat",
+      "length": 266,
+      "sha256": "b956248a0a4c7c0f003279abf4c7d32490e7f285e6356fe3835756f8d6afa483"
+    },
+    {
+      "path": "GET_SDRSHARP_SDK.bat",
+      "length": 389,
+      "sha256": "85ebac36ee0c639e406aa94808d81034162ef6a3b19cbd4f87ef064eeaf09a94"
+    },
+    {
+      "path": "GITHUB_RELEASE_NOTES.md",
+      "length": 1724,
+      "sha256": "6bc26213bf758f899b603f9e17d4bc30d541ce8b7a649dffda7cab7e8308a2f9"
+    },
+    {
+      "path": "LEGAL.md",
+      "length": 914,
+      "sha256": "650ccd406903fa567e9f507435349e0b2a953da81f60b91aa2636f3b97c61fb6"
+    },
+    {
+      "path": "LICENSE",
+      "length": 1092,
+      "sha256": "a3bc44886c70ad508fecbdd5232ca7f55cb463e3c675a500c461216134bed39a"
+    },
+    {
+      "path": "LICENSES/LGPL-2.1-or-later.txt",
+      "length": 26419,
+      "sha256": "20e50fe7aae3e56378ebf0417d9de904f55a0e61e4df315333e632a4d3555d95"
+    },
+    {
+      "path": "LICENSES/MIT.txt",
+      "length": 1092,
+      "sha256": "a3bc44886c70ad508fecbdd5232ca7f55cb463e3c675a500c461216134bed39a"
+    },
+    {
+      "path": "LICENSES/README.md",
+      "length": 567,
+      "sha256": "1d6fd7d5d8e6b857274802f22482844ca74452778f2840a46709b1ce4936831b"
+    },
+    {
+      "path": "NuGet.Config",
+      "length": 297,
+      "sha256": "47b5b51bf16df21aa259d2fa2227f05bece258c406b22b2341129aa255f7f577"
+    },
+    {
+      "path": "PREPARAR_RELEASE_LIMPA.ps1",
+      "length": 3714,
+      "sha256": "1bdf03f7f4c6993d1a25c8a84c3646d1884c7aaadb6652a3af392e5c1c8cc0db"
+    },
+    {
+      "path": "PREPARAR_SDK_ESTAVEL.ps1",
+      "length": 6355,
+      "sha256": "193d383f4e04b8adcbf5204d0e852027182c1feb2661dd421b6dddbe64ec4d95"
+    },
+    {
+      "path": "PRIVACY.md",
+      "length": 629,
+      "sha256": "d7612e5bc2b8c8a7dd49b5d2211d265ded596eedc57535eac833a8ffacfa7b67"
+    },
+    {
+      "path": "README.md",
+      "length": 4709,
+      "sha256": "276c76525d50e4ec5f22ae9bec4904f7af7949904b47f7f3d637d3ad5cf49756"
+    },
+    {
+      "path": "README.pt-PT.md",
+      "length": 483,
+      "sha256": "8dc098ea4a9df05724dac268222efbf67ffd2d9f10e8c9792523f4a24e2b77a7"
+    },
+    {
+      "path": "SECURITY.md",
+      "length": 304,
+      "sha256": "48d9adeb7207d0e54e0953d2a0eb832a8a702fdf2837db3efab69fb3dc9c72d8"
+    },
+    {
+      "path": "SUPPORT.md",
+      "length": 231,
+      "sha256": "c02f06675760cdfe53bbd939bef5db4bba99141b4fa3bd09270e436914aeab3a"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "length": 1442,
+      "sha256": "d1dfec16dc67238596bd466c8ec1fa8524b482ddcf6c069be0724abacaf8238d"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "length": 567,
+      "sha256": "3f0d321bd788ba8563628925ab57edfd2c66d8659652af2adf533c6a1b409bd1"
+    },
+    {
+      "path": "docs/BUILD_FROM_SOURCE.md",
+      "length": 216,
+      "sha256": "61611c34bac1671f37b3e000ae4a0ea0d5332df33090c841f8a65dd478d5887b"
+    },
+    {
+      "path": "docs/P2_ARCHITECTURE.md",
+      "length": 567,
+      "sha256": "3f0d321bd788ba8563628925ab57edfd2c66d8659652af2adf533c6a1b409bd1"
+    },
+    {
+      "path": "docs/P2_VISUAL_INTERFACE.md",
+      "length": 2644,
+      "sha256": "cba201b359ca1b588295196fc57e2c9758c925ba156756581c3964ea6720a478"
+    },
+    {
+      "path": "docs/SDK_COMPATIBILITY.md",
+      "length": 434,
+      "sha256": "d1bbb5989f6cceacccef36b7380d1caaf54aedb8f050064ba293cce95021f46b"
+    },
+    {
+      "path": "docs/SOAK_TEST.md",
+      "length": 891,
+      "sha256": "939bc8b4e9b1dcac5b025febb57540ad15de98f2a314cb0d32eda13e675a77ef"
+    },
+    {
+      "path": "docs/TESTING.md",
+      "length": 233,
+      "sha256": "5d521c63688f362e23b268cb16750ce88bad12563eeb7660328852faca91ba78"
+    },
+    {
+      "path": "docs/development-history/P2_AIRCRAFT_HOTFIX2_NOTES.md",
+      "length": 1154,
+      "sha256": "7a9dcf6844e0d11293689e9a63f47d262ef47cbd3e325152d66858d5fed18f00"
+    },
+    {
+      "path": "docs/development-history/P2_AIRCRAFT_HOTFIX3_NOTES.md",
+      "length": 1189,
+      "sha256": "d19e15b91bbaf2ec9e65021073ef73fe353a1304739706ca684ff1bab023dadb"
+    },
+    {
+      "path": "docs/development-history/P2_AIRCRAFT_HOTFIX4_NOTES.md",
+      "length": 883,
+      "sha256": "78a8091c2dca4124d9eeb37cb32f378d32a7fb02a502e7d07884e90c34fb49d2"
+    },
+    {
+      "path": "docs/development-history/P2_DIAGNOSTICS_LAYOUT_HOTFIX_NOTES.md",
+      "length": 925,
+      "sha256": "c771a94d84e4fbdfb4eda5c41bc700a4cc352569d1597ea990b357c0b2014226"
+    },
+    {
+      "path": "docs/development-history/P2_FINAL_VISUAL_NOTES.md",
+      "length": 1033,
+      "sha256": "1e1faf0e478a4d2e769368dcfa99101caf2bd1f5c6375daab0afb49ceb403810"
+    },
+    {
+      "path": "docs/development-history/P2_LOWER_WORKSPACE_REFRESH_NOTES.md",
+      "length": 1229,
+      "sha256": "bc26cc011bc90423e77b40d12be25795f382dee9f172984263209c1a345e593f"
+    },
+    {
+      "path": "docs/development-history/P2_MOUSE_CURSOR_HOTFIX1_NOTES.md",
+      "length": 612,
+      "sha256": "72f41a383387021f1c9e787697d7a8c623dcd6e55aad36decc8a70fcac10818d"
+    },
+    {
+      "path": "docs/development-history/P2_NATIVE_DASHBOARD_NOTES.md",
+      "length": 921,
+      "sha256": "7133a51d2dd33deaec6533a562c7892eb670386bd55654c524938466fab2a653"
+    },
+    {
+      "path": "docs/development-history/P2_RELEASE_NOTES.md",
+      "length": 1035,
+      "sha256": "64ca528cf7e5068ca78d2ce82461902a9fcba0ed1fd71c91f04dec544d1666cc"
+    },
+    {
+      "path": "docs/development-history/P2_SETTINGS_EXPORT_HOTFIX1_NOTES.md",
+      "length": 914,
+      "sha256": "6b50b007e71bb4e73851283f90e2782297beaff3c7f4ccb221a560296b692f83"
+    },
+    {
+      "path": "docs/development-history/P2_SETTINGS_EXPORT_HOTFIX2_NOTES.md",
+      "length": 438,
+      "sha256": "315917f77337e461bbb5eef630ec6aebca7245ed9826f605c31cf02dd22b95aa"
+    },
+    {
+      "path": "docs/development-history/P2_UI_HOTFIX1_NOTES.md",
+      "length": 382,
+      "sha256": "5910b6eb2d5ea6aecf5870f02bac9e8e6ec7ea92dbbf4a48ca24ee11c2a48f58"
+    },
+    {
+      "path": "docs/development-history/P2_VISUAL_REFRESH_NOTES.md",
+      "length": 844,
+      "sha256": "90d9ef3af7d9c3e0204340ebbb64fcae7144dda6e09020646a16cb8055f0da60"
+    },
+    {
+      "path": "docs/development-history/P2_WORKSPACE_REORGANIZATION_NOTES.md",
+      "length": 822,
+      "sha256": "5875ea8928ef45bcf84f515e5be3177a3e6ffb743eba8e3f6fa00befe2eea0ac"
+    },
+    {
+      "path": "docs/development-history/README.md",
+      "length": 239,
+      "sha256": "6e0002d5fcb243168af2e3b53a03344db8247789808adabbce5ebbb9bc03e914"
+    },
+    {
+      "path": "docs/screenshots/aircraft-details.png",
+      "length": 1328372,
+      "sha256": "3731d2d4acf0e5090c3b869e4d0a976cf8e2ad715e31ab4d2df1024cc7352693"
+    },
+    {
+      "path": "docs/screenshots/messages-waterfall.png",
+      "length": 1757218,
+      "sha256": "ec76cbd46517e783431bca43cb98168ebe52a21dcdb439150542f6fafc120aef"
+    },
+    {
+      "path": "docs/screenshots/overview-dark.png",
+      "length": 1450847,
+      "sha256": "3948bb21f2c5730aaa93915205ec099257a3133627ea5c5d053f221498afed8b"
+    },
+    {
+      "path": "docs/validation/P2_FINAL_VISUAL_VALIDATION.md",
+      "length": 1354,
+      "sha256": "d9a09f255c7dac04eb2baa68d3a03d288f7273fd9ec96879db425ff644c2bbff"
+    },
+    {
+      "path": "docs/validation/P2_NATIVE_DASHBOARD_VALIDATION.md",
+      "length": 984,
+      "sha256": "928cd1b55f0020273dd60b3b7ae79a321237aafa26966a248cf2453ae0f93a80"
+    },
+    {
+      "path": "docs/validation/P2_VALIDATION_REPORT.md",
+      "length": 1402,
+      "sha256": "f1fa0e77bf8bcc0a648f4b5d68e6911f4c6e711c731f27cb58e5f6a4d0724c59"
+    },
+    {
+      "path": "docs/validation/README.md",
+      "length": 191,
+      "sha256": "22d011af4449e25b2bf98f227b41f7ade2b968320e23ccaea3a0787c217ce090"
+    },
+    {
+      "path": "global.json",
+      "length": 104,
+      "sha256": "9c69ebf15e08f944921f34b4cadf50e879d3467bb847d609b6ae079fc120d192"
+    },
+    {
+      "path": "lib/.gitignore",
+      "length": 25,
+      "sha256": "aae815b9313ef60fb99d51bec324f3de1cea5256d6bbf58a660578b3e2d5815c"
+    },
+    {
+      "path": "lib/README.md",
+      "length": 339,
+      "sha256": "3db8b5fd945e798923c7eccb2c238cc36fa9a02f0f11cd56b536e62730cec945"
+    },
+    {
+      "path": "sdk/README.md",
+      "length": 756,
+      "sha256": "02f6ff1b1d139b403de63646b436ca735bd3f6eea55ccb22547131a629dcdde6"
+    },
+    {
+      "path": "sdk/approved-sdks.json",
+      "length": 2166,
+      "sha256": "c505bbbcfe0a1f56bdf0753f47d2b320cc2f4a25da2119f618a685bee71c3ad5"
+    },
+    {
+      "path": "sdk/compatibility-matrix.json",
+      "length": 672,
+      "sha256": "33feb008e1e407f98cb8b6d3e9b5c3a657e9e271a7841c7d61214d0881994e51"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/AcarsMessageParser.cs",
+      "length": 9902,
+      "sha256": "cc325f9ebd78b2796f80890d4f3c1294797fe2b2de79e1ce26810bd4cfbe3445"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/AircraftDataEnhanced.Core.csproj",
+      "length": 386,
+      "sha256": "38fc9b3e60320794a744f6c3f08b439616a73369a3023195696e8558878a308a"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/AircraftMetadataService.cs",
+      "length": 33197,
+      "sha256": "1cfc36725bacf962394d51d7cfedb08bd66552a4912d1aefb03fd6cd542daf94"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/AircraftOnlineLookup.cs",
+      "length": 3363,
+      "sha256": "df8b5542c2b48fbe4ca0afe9f4bab54724af8cd33b106024ad1caa5ed0fdd6da"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/AircraftSessionStore.cs",
+      "length": 13086,
+      "sha256": "d1d03ecfb6231ed5a5a1fd7afe6ed720f06f060eeb9bf87bc6e60f0eaa57d207"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/IqProcessingPipeline.cs",
+      "length": 15208,
+      "sha256": "5c3cd5bc4f2b07034cc018ccb0427d9bddb9412e379aab3e8c53668205291269"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/ManagedBurstDetector.cs",
+      "length": 23249,
+      "sha256": "7d93c8dad35e30e07b843caee20437b0322a5512b38fda943ccc22222c83f1aa"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/MessageStore.cs",
+      "length": 3171,
+      "sha256": "a60bad2cd2208ac613bc259d03eef2a0a8417e6d19ed0d05651e146a94a4dee1"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/Models.cs",
+      "length": 3539,
+      "sha256": "f44075bdbf9bcc31ed1d2bf1d4653521c2a9774c81958654ab7010d107f53b4d"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/Properties/AssemblyInfo.cs",
+      "length": 270,
+      "sha256": "33a82c7ffc4fe3c2e8da9c356a5fa15395c193b3cf52ef9578fd6e918ab23b15"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/ReedSolomon255249.cs",
+      "length": 11968,
+      "sha256": "0d904f6b3f13fed2c12b201e23b07df63c932c78023c7d87025d0bdb353f053e"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/SignalMetrics.cs",
+      "length": 3372,
+      "sha256": "410a0a326ff953dda07d5a1b28f77e677cef9bdab8cff3612c8920446fa649c3"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/Vdl2FrameDecoder.cs",
+      "length": 15396,
+      "sha256": "1c3b599d1f24606cf12cd4266f3c5b21676bc5edaa7bc46e92b1be1f4aa43616"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/Vdl2JsonParser.cs",
+      "length": 4133,
+      "sha256": "8d0df8364e8dfcfefc8bf1bc64ccb6dbd47b5af7d84b073b21547b4f398cfc9d"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/Vdl2PayloadDecoder.cs",
+      "length": 24947,
+      "sha256": "276f81575110e108b018f9088f07ed8e10d1633f4f36d53c5bc3162c5dd951cd"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/VerifiedAircraftMessagePolicy.cs",
+      "length": 1550,
+      "sha256": "273442da1516ea3c2234b1b3296e53bd4bae47476298e6d7eabeb7c5eacabf1e"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Core/packages.lock.json",
+      "length": 65,
+      "sha256": "f0751dcd876da577c944d7a7eb04a492392e40491a8829c1e9776fd07ff65606"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/AircraftDataEnhanced.Persistence.csproj",
+      "length": 707,
+      "sha256": "c8cdef2d022d40d10c35a34c83a60575731b7c8d952944a40f0e0e4f37b62d24"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/D8pskSymbolAnalyzer.cs",
+      "length": 50435,
+      "sha256": "b394c4799084693aa44a20fae6d0a92b575d37ae74445ecfbd321f833c223b3c"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/IqCaptureManager.cs",
+      "length": 36593,
+      "sha256": "277fbf510472b0a069bfb86ac4807010ac64f2be7b914628fea655d96344ee10"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/JsonlExporter.cs",
+      "length": 10393,
+      "sha256": "c440ec4e288c0b09cfeb63a13facfaa56ccf7c8e74587c183b872378899296ca"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/LocalHistoryDatabase.cs",
+      "length": 40356,
+      "sha256": "c57f7fcdff1859f2f41d7d8797bc1d92bdcec318f3d7c354db7174b19f4e850c"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/Properties/AssemblyInfo.cs",
+      "length": 203,
+      "sha256": "6d629bf4d7bd00766c86cfdb086b5609421b6f0b1028a2c73e8a4fa7574451e8"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/RuntimeDataPaths.cs",
+      "length": 9432,
+      "sha256": "7a89a07e90f5e2e3fcea277e0fbd45af5491d27a31e0a270523b6c93d47fa090"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/UiPreferencesStore.cs",
+      "length": 4427,
+      "sha256": "659c8a4d6c9beb46b1e562a537312b3b668990f674b2d38d737e63bef61eb484"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/Vdl2AnalysisScheduler.cs",
+      "length": 14592,
+      "sha256": "8d621b4f124261ae6833a6e9bbe3ee3a092251032f7e4ffa80f0963fcb01668b"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/Vdl2CaptureSalvager.cs",
+      "length": 21063,
+      "sha256": "aa6553e5e9b40e4caae064718530967d6511b9b8a713d53cbdf0170d60df5808"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.Persistence/packages.lock.json",
+      "length": 2336,
+      "sha256": "da06cc2226d9d6fa7812b28a575b7fbcac60da290a92a6ec04415ad7744fc9bc"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/ActiveAircraftSessionsControl.cs",
+      "length": 30823,
+      "sha256": "fd5cfc4ffd0599555b3ec7104b283db90561358af0cc9ea15cf49e31b20966c6"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/AdeVisualTheme.cs",
+      "length": 24927,
+      "sha256": "b5fe63d1a3529193bebeb80eec38022529bd92da58e954ea963affa8ef06d470"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/AirOperationsBoardControl.cs",
+      "length": 30558,
+      "sha256": "28f2936b28682520a066ffba2262221541d927b380beeac44f7d61faf6eb57a0"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/AircraftDashboardControl.cs",
+      "length": 42573,
+      "sha256": "5aa8a2ab93757c251b09ba2a5dd06f54a3494aa365749e95c8d698b00f4726fb"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/AircraftDataEnhanced.SdrSharpAdapter.csproj",
+      "length": 1266,
+      "sha256": "0bf5d0cd3328a27cf5f814431c36fb2485a94214ffe83973f87e6bd50cf6651b"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/AircraftDataPanel.cs",
+      "length": 128809,
+      "sha256": "814b28587e6296fa437bed4388ba39c60fb53f64b0dfc5859d8f2e5389fff2a3"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/AircraftDataPlugin.cs",
+      "length": 3252,
+      "sha256": "2150db73c2e69b1b5f55292b1f4469adead4ea3f6ead51600896f853992c70e3"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/ChannelStatusCard.cs",
+      "length": 4211,
+      "sha256": "36dfbda06400701f0a9ac9e773c4fe40b964254e2c69daeccfa1de135653d60f"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/DiagnosticsSummaryControl.cs",
+      "length": 14781,
+      "sha256": "aab2a7a157856869cd1ddf55626534fc83b37628e532e0bcf53f93a81ef57ab5"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/IqStreamProcessor.cs",
+      "length": 634,
+      "sha256": "a6b948e942566c61968970682ed93b96ae7e4493a440c3d5aa6d685cacb51bfd"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/LocalHistoryControl.cs",
+      "length": 27074,
+      "sha256": "b949a913c5625a5dcb7dd24baa9056cf297f018c3cc8921c49c6c1a1b11c8895"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/PluginDependencyBootstrap.cs",
+      "length": 2380,
+      "sha256": "9f41d98445964a6e80a22af92fc67bdb3065805ab20a0d65c5fad70718bec2ab"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/ProductAboutDialog.cs",
+      "length": 10878,
+      "sha256": "2c8ccdfeed5c7a081ba826f8e51cf32c689154cf3af456d79d7e046a03871be3"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/Properties/AssemblyInfo.cs",
+      "length": 132,
+      "sha256": "d4eae64e977d819a0ae072226bcd5069ab700155b8291639079b4fcd93bf7725"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/SpectrumWaterfallControl.cs",
+      "length": 25513,
+      "sha256": "2258f90357388fa79396edd203f7626faa838885a8d09899e2b8f232e3fdb544"
+    },
+    {
+      "path": "src/AircraftDataEnhanced.SdrSharpAdapter/packages.lock.json",
+      "length": 2919,
+      "sha256": "823bbb38a966becc8c7f7ed2129f1af3b690a290176fc82d5751a82e226b6fcd"
+    },
+    {
+      "path": "testdata/golden/README.md",
+      "length": 279,
+      "sha256": "f1c619e1b0be7cb01d400f6ece3448b37a638bd3f3abf74a03b5e14d6ccc27bf"
+    },
+    {
+      "path": "testdata/golden/vdl2_full_frame_expected.json",
+      "length": 449,
+      "sha256": "d9763d18ebf227abd3b858eead2b89725882fe9372454b1e1cad92d07fc5ab6f"
+    },
+    {
+      "path": "testdata/golden/vdl2_full_frame_iq_f32le.bin",
+      "length": 45120,
+      "sha256": "a67de9001268dea155ef968975ba715e8d9e83ade5c8937065c113dbd96d222c"
+    },
+    {
+      "path": "tests/AircraftDataEnhanced.Tests/AircraftDataEnhanced.Tests.csproj",
+      "length": 1830,
+      "sha256": "af35786248380229f267b136b66fb3b2fd66bebeab33564fb6b7c67b846294ac"
+    },
+    {
+      "path": "tests/AircraftDataEnhanced.Tests/GoldenVectorTests.cs",
+      "length": 3103,
+      "sha256": "d02de50be0ca2e8aa6caf6887abc49658058d8204ae5f8df2755dc91e2087c54"
+    },
+    {
+      "path": "tests/AircraftDataEnhanced.Tests/PersistenceIntegrationTests.cs",
+      "length": 2661,
+      "sha256": "3d42343ee37cd7dfd06a0f87657202466049833bb8fd98569a0a7f1aa8fddd86"
+    },
+    {
+      "path": "tests/AircraftDataEnhanced.Tests/Program.cs",
+      "length": 31803,
+      "sha256": "d92741b0d51e30393cf260272fcaf2f2f7a7898680acd494ed1b94e086d00b66"
+    },
+    {
+      "path": "tests/AircraftDataEnhanced.Tests/SdkCompatibilityTests.cs",
+      "length": 11615,
+      "sha256": "cd0f336411fc3cfd58afea61a1209ce53063cbbc56aead3b19401234d8afbe1e"
+    },
+    {
+      "path": "tests/AircraftDataEnhanced.Tests/SoakRunner.cs",
+      "length": 21716,
+      "sha256": "7cb74fc1bcd17c19972e87653b51bf895349668698c62cedee8d478934fc3f28"
+    },
+    {
+      "path": "tests/AircraftDataEnhanced.Tests/packages.lock.json",
+      "length": 3156,
+      "sha256": "7e36a2f52405afcf4a304c113a62f3d41cb1e2b5732e8b6dc36c7422b84cdbfd"
+    },
+    {
+      "path": "tools/Get-SdrSharpSdkFingerprint.ps1",
+      "length": 1700,
+      "sha256": "087a5397c0a8e76616e59c61dcd3dd7b62e014a0579c3d90e23f238fc683e245"
+    },
+    {
+      "path": "tools/New-BinaryManifest.ps1",
+      "length": 1077,
+      "sha256": "d6cbc42563ecdd6d57c316329a016b08155d55e63551f2b16b9227c25a55bc88"
+    },
+    {
+      "path": "tools/Verify-SdrSharpSdk.ps1",
+      "length": 2815,
+      "sha256": "6e291a76229b22c4aa91c755dd48bc23bc9a3fe921e25c608ab285d77204222e"
+    },
+    {
+      "path": "tools/analyze_d8psk_symbols.py",
+      "length": 13371,
+      "sha256": "cba2dbab7b347060f51df9e551a5958aa7196e4886e6a08b8a065e6a98b6320d"
+    },
+    {
+      "path": "tools/audit_public_repository.py",
+      "length": 4641,
+      "sha256": "5854fdf368eb3af770e6f8ad6a13dffaa1c08108e5fe47a2ef8095da8e6e2702"
+    },
+    {
+      "path": "tools/ci-sdrsharp-stubs/README.md",
+      "length": 414,
+      "sha256": "c5a9fddeb9394b2491852984f4f1be5f343af2ff1c8a76cc559af645bbd31511"
+    },
+    {
+      "path": "tools/ci-sdrsharp-stubs/SDRSharp.Common/CommonContracts.cs",
+      "length": 783,
+      "sha256": "b97547e4a07715833b4abe9970b58898f9be7c0e3f53011b7e471b66165327f8"
+    },
+    {
+      "path": "tools/ci-sdrsharp-stubs/SDRSharp.Common/SDRSharp.Common.csproj",
+      "length": 502,
+      "sha256": "83b44799cf461866dbce15b46fbe41c784424e547378873c6f0ef1818af9ca84"
+    },
+    {
+      "path": "tools/ci-sdrsharp-stubs/SDRSharp.Radio/RadioContracts.cs",
+      "length": 690,
+      "sha256": "9eac267aaf181679195a50db068dbae69a4fba5f3d7139d5e85db1b621a6bca2"
+    },
+    {
+      "path": "tools/ci-sdrsharp-stubs/SDRSharp.Radio/SDRSharp.Radio.csproj",
+      "length": 399,
+      "sha256": "b842dc667f2ba41c5bac5ff648fee715443ad82658f67f7883129ae19429f32f"
+    },
+    {
+      "path": "tools/decode_vdl2_header.py",
+      "length": 5776,
+      "sha256": "40a88da4c537f8243bb3300b5a5081dd556604eb57a3dacae19b142106a3642d"
+    },
+    {
+      "path": "tools/decode_vdl2_payload.py",
+      "length": 29338,
+      "sha256": "c2bc520d106c69deb0441ac68824310f801676dbe1e259dbb46ca45e4e6b0134"
+    },
+    {
+      "path": "tools/generate_release_manifest.py",
+      "length": 1115,
+      "sha256": "92c80386674a09868d4dd1a4855b68e00e203c4c9c68a00707cfa2d8faf2790b"
+    },
+    {
+      "path": "tools/inspect_capture.py",
+      "length": 2575,
+      "sha256": "d931eb01883c214251b884b9e160aad4f0b07abff390092d5542a1f4d3e22741"
+    },
+    {
+      "path": "tools/offline_vdl2_analyzer.py",
+      "length": 14272,
+      "sha256": "95bd814e96297c5d3d5269b55b0585afa5ac547d87ca2731f6229d3d3c8df025"
+    },
+    {
+      "path": "tools/rank_captures.py",
+      "length": 2823,
+      "sha256": "722c039bdd9dd9d9795948438df9e81902413b879c7b566387907d90f4690a67"
+    },
+    {
+      "path": "tools/requirements.txt",
+      "length": 29,
+      "sha256": "247cac82bee90f66c969c1966d2ed2e953e746037593bba521fe878b0c84aa40"
+    },
+    {
+      "path": "tools/requirements_capture.txt",
+      "length": 14,
+      "sha256": "bb260e03cdea3a1ab25a889a9edc62ced108f38d1fc09ddc7a67c718b12e5958"
+    },
+    {
+      "path": "tools/test_acars_envelope_parser.py",
+      "length": 2981,
+      "sha256": "81e4f121818e172f0bdab08aac45dc1252ff24de5ce08b77d45d5febbc091ebc"
+    },
+    {
+      "path": "tools/test_active_aircraft_sessions.py",
+      "length": 4106,
+      "sha256": "56051b1895bec0e73cb7e08b0a4abcbf1c2730d8a89dbf7950536c1bb39bb046"
+    },
+    {
+      "path": "tools/test_aircraft_dashboard_lookup.py",
+      "length": 6696,
+      "sha256": "fb84bd9520bf20b5d0066562444da20176fb94e1b4170e8db7f9a3b61b55e603"
+    },
+    {
+      "path": "tools/test_final_visual_interface.py",
+      "length": 3003,
+      "sha256": "d2645082fbc921e0220fab81015277bfc8b6f442dc206dd6691565246ddeb9ac"
+    },
+    {
+      "path": "tools/test_local_history_database.py",
+      "length": 5926,
+      "sha256": "12cba90af795f9207135ab696b3d1e76e35b79534686a7f603f2f839307182d2"
+    },
+    {
+      "path": "tools/test_lower_workspace_visual.py",
+      "length": 1960,
+      "sha256": "ccf617e67745c991aed407eacf2625ff48f122179b38f259200b4a38b804edaa"
+    },
+    {
+      "path": "tools/test_mouse_cursor_scope.py",
+      "length": 403,
+      "sha256": "c8272297aeadb56cc51b3f8ff5bf6d85c5baaa398080c179241586ee6d0685bb"
+    },
+    {
+      "path": "tools/test_native_dashboard_visual.py",
+      "length": 1401,
+      "sha256": "3e0fdb5d6feec4c9bab9228ce8c98a01e4cadaaaec37ced7a1dea1f442763508"
+    },
+    {
+      "path": "tools/test_settings_export_navigation.py",
+      "length": 1472,
+      "sha256": "cb433ae2cdaf478720728addb9168de4cd9587a384264c21667bd827915b2cba"
+    },
+    {
+      "path": "tools/test_ui_preferences.py",
+      "length": 2708,
+      "sha256": "b7aa9fadff3a2bdc66c0d71a2377d801dac750f93761302a484d81dced9adee0"
+    },
+    {
+      "path": "tools/test_vdl2_header_decoder.py",
+      "length": 1127,
+      "sha256": "962ac143424241e2b25cc17f4a1412cc301493c4e33ab03ee779716db76b5fb9"
+    },
+    {
+      "path": "tools/test_vdl2_payload_decoder.py",
+      "length": 3248,
+      "sha256": "859f00b129d226e61b943ae98f7e73d3eab5eaba1679f451cd2b243ee75daceb"
+    },
+    {
+      "path": "tools/test_verified_aircraft_only.py",
+      "length": 1611,
+      "sha256": "e209b7ae47cfd0bba91e3bcc3b35786b937d6d8a95d2de7888fbc6397391e2cc"
+    },
+    {
+      "path": "tools/test_workspace_reorganization.py",
+      "length": 1390,
+      "sha256": "5c18c160ab812d3a3d316088215097aa706f5afed632fdeb9b8025c35a76ea9d"
+    },
+    {
+      "path": "tools/validate_csharp_strings.py",
+      "length": 3663,
+      "sha256": "047c9c3000aec100c87cd8e049ecba667318bf49aa716ffccceae289b19cad33"
+    },
+    {
+      "path": "tools/validate_p2_stable.py",
+      "length": 2033,
+      "sha256": "c12233223efc96b98991a7ff787c705bc817f8369241d6178f526b17a48c42cb"
+    },
+    {
+      "path": "tools/verify_release_manifest.py",
+      "length": 1318,
+      "sha256": "2809db4257c08ba4679c07896f4b09efba226719c952d4a6f89d516a2dd2e8e5"
+    }
+  ]
+}

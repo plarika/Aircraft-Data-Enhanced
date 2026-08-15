@@ -10,5 +10,5 @@ SDRSharp.Radio.dll
 
 Não coloques estas DLL no GitHub. Fecha o SDR# e executa
 `BUILD_E_INSTALAR_TUDO.bat`. Os dados locais ficam em
-`%LOCALAPPDATA%\AircraftDataEnhanced\`. Não publiques bases, capturas, logs
+`%LOCALAPPDATA%\\AircraftDataEnhanced\\`. Não publiques bases, capturas, logs
 ou comunicações sem revisão legal e de privacidade.

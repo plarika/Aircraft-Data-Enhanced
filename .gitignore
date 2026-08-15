@@ -40,3 +40,11 @@ Thumbs.db
 *.tmp
 *.bak
 *.old
+artifacts/
+**/bin/
+**/obj/
+sdk/approved-sdks.local.json
+
+# Keep neutral documentation previews in the public repository.
+!docs/screenshots/
+!docs/screenshots/*.png

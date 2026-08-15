@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AssemblyName>AircraftDataEnhanced.Tests</AssemblyName>
+    <RootNamespace>SDRSharp.AircraftDataEnhanced</RootNamespace>
+    <PlatformTarget>x86</PlatformTarget>
+    <Platforms>x86</Platforms>
+    <RuntimeIdentifier>win-x86</RuntimeIdentifier>
+    <SelfContained>false</SelfContained>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\AircraftDataEnhanced.Core\AircraftDataEnhanced.Core.csproj" />
+    <ProjectReference Include="..\..\src\AircraftDataEnhanced.Persistence\AircraftDataEnhanced.Persistence.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--
+      The official SDR# SDK files are reference assemblies. They are copied
+      as inert metadata fixtures into a subdirectory and are never loaded for
+      execution by the standalone test process.
+    -->
+    <None Include="..\..\lib\SDRSharp.Common.dll"
+          Link="sdk-reference\SDRSharp.Common.dll"
+          CopyToOutputDirectory="PreserveNewest"
+          Visible="false" />
+    <None Include="..\..\lib\SDRSharp.Radio.dll"
+          Link="sdk-reference\SDRSharp.Radio.dll"
+          CopyToOutputDirectory="PreserveNewest"
+          Visible="false" />
+
+    <None Include="..\..\sdk\compatibility-matrix.json"
+          Link="sdk\compatibility-matrix.json"
+          CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\sdk\approved-sdks.json"
+          Link="sdk\approved-sdks.json"
+          CopyToOutputDirectory="PreserveNewest" />
+    <None Include="..\..\testdata\golden\**\*"
+          Link="testdata\golden\%(RecursiveDir)%(Filename)%(Extension)"
+          CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

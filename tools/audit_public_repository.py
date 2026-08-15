@@ -14,7 +14,7 @@ BAD_SUFFIX = {
 
 BAD_DIR = {
     'bin', 'obj', '.vs', 'captures', 'analysis', 'diagnostics',
-    '__pycache__', '.venv', 'venv'
+    '__pycache__', '.venv', 'venv', 'artifacts'
 }
 
 PATTERNS = {
@@ -36,15 +36,26 @@ PATTERNS = {
     )
 }
 
+PUBLIC_IMAGE_ALLOWLIST = {
+    'docs/screenshots/overview-dark.png',
+    'docs/screenshots/aircraft-details.png',
+    'docs/screenshots/messages-waterfall.png',
+}
+
+LOCAL_SDK_ALLOWLIST = {
+    'lib/SDRSharp.Common.dll',
+    'lib/SDRSharp.Radio.dll',
+}
+
 
 def main() -> int:
     parser = argparse.ArgumentParser()
+    parser.add_argument('root', nargs='?', default='.')
     parser.add_argument(
-        'root',
-        nargs='?',
-        default='.'
+        '--strict-public',
+        action='store_true',
+        help='Reject locally supplied SDR# SDK binaries as well as runtime/build data.'
     )
-
     args = parser.parse_args()
     root = Path(args.root).resolve()
 
@@ -53,40 +64,35 @@ def main() -> int:
 
     for file_path in root.rglob('*'):
         relative = file_path.relative_to(root)
+        rel = relative.as_posix()
 
-        # Ignora metadados internos criados pelo Git e pelo GitHub Actions.
         if '.git' in relative.parts:
             continue
 
         if any(part in BAD_DIR for part in relative.parts):
-            errors.append(
-                f'Forbidden directory content: {relative}'
-            )
+            errors.append(f'Forbidden directory content: {relative}')
             continue
 
         if not file_path.is_file():
             continue
 
         if file_path.suffix.lower() in BAD_SUFFIX:
-            errors.append(
-                f'Forbidden file type: {relative}'
-            )
+            if rel in PUBLIC_IMAGE_ALLOWLIST:
+                continue
+            if rel in LOCAL_SDK_ALLOWLIST and not args.strict_public:
+                continue
+            errors.append(f'Forbidden file type: {relative}')
             continue
 
         try:
-            text = file_path.read_text(
-                encoding='utf-8-sig'
-            )
+            text = file_path.read_text(encoding='utf-8-sig')
         except UnicodeDecodeError:
             continue
 
         scanned += 1
-
         for label, pattern in PATTERNS.items():
             if pattern.search(text):
-                errors.append(
-                    f'{relative}: {label}'
-                )
+                errors.append(f'{relative}: {label}')
 
     required_files = [
         'LICENSE',
@@ -98,79 +104,53 @@ def main() -> int:
         'PRIVACY.md',
         'SECURITY.md',
         'CONTRIBUTING.md',
+        'CHANGELOG.md',
         'lib/README.md',
         'lib/.gitignore'
     ]
 
     for required in required_files:
         if not (root / required).exists():
-            errors.append(
-                f'Missing: {required}'
-            )
+            errors.append(f'Missing: {required}')
 
-    reed_solomon = (
-        root /
-        'src' /
-        'ReedSolomon255249.cs'
-    )
-
+    reed_solomon = root / 'src' / 'AircraftDataEnhanced.Core' / 'ReedSolomon255249.cs'
     if reed_solomon.exists():
-        text = reed_solomon.read_text(
-            encoding='utf-8-sig'
-        )
+        text = reed_solomon.read_text(encoding='utf-8-sig')
+        if 'SPDX-License-Identifier: LGPL-2.1-or-later' not in text:
+            errors.append('ReedSolomon SPDX missing')
 
-        if (
-            'SPDX-License-Identifier: LGPL-2.1-or-later'
-            not in text
-        ):
-            errors.append(
-                'ReedSolomon SPDX missing'
-            )
-
-    build_script = (
-        root /
-        'BUILD_E_INSTALAR_TUDO.bat'
-    )
-
+    build_script = root / 'BUILD_E_INSTALAR_TUDO.bat'
     if build_script.exists():
-        text = build_script.read_text(
-            encoding='utf-8-sig'
-        )
-
+        text = build_script.read_text(encoding='utf-8-sig')
         required_tokens = (
             'https://airspy.com/download/',
             'SDR# SDK for Plugin Developers',
             'lib\\SDRSharp.Common.dll',
             'lib\\SDRSharp.Radio.dll'
         )
-
         for token in required_tokens:
             if token not in text:
-                errors.append(
-                    f'Build SDK notice missing: {token}'
-                )
+                errors.append(f'Build SDK notice missing: {token}')
+
+    if args.strict_public:
+        for rel in sorted(LOCAL_SDK_ALLOWLIST):
+            if (root / rel).exists():
+                errors.append(f'Proprietary SDK binary must not be published: {rel}')
 
     if errors:
         for error in sorted(set(errors)):
-            print(
-                '[ERRO]',
-                error
-            )
-
+            print('[ERRO]', error)
         return 1
 
+    mode = 'strict public' if args.strict_public else 'local development'
     print(
-        '[OK] Public repository audit passed: '
-        f'{scanned} text files scanned; '
-        '.git metadata ignored; '
-        'no proprietary DLLs, local data, absolute user paths, '
+        '[OK] Public repository audit passed '
+        f'({mode} mode): {scanned} text files scanned; '
+        '.git metadata ignored; no forbidden runtime data, absolute user paths, '
         'email addresses or obvious secrets found.'
     )
-
     return 0
 
 
 if __name__ == '__main__':
-    raise SystemExit(
-        main()
-    )
+    raise SystemExit(main())

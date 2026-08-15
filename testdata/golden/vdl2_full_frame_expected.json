@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "name": "vdl2_full_frame_all_zero_rs",
+  "sampleFormat": "complex-f32le",
+  "sampleRate": 84000.0,
+  "symbolRate": 10500.0,
+  "samplesPerSymbol": 8,
+  "sampleCount": 5640,
+  "transmissionLengthBits": 1992,
+  "expectedStatus": "hdlc_no_frame",
+  "headerValid": true,
+  "payloadComplete": true,
+  "reedSolomonValid": true,
+  "hdlcFrames": 0,
+  "iqSha256": "a67de9001268dea155ef968975ba715e8d9e83ade5c8937065c113dbd96d222c"
+}

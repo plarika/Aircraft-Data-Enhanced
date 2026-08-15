@@ -1,6 +1,3 @@
 # Build from source
 
-Requirements: Windows, .NET 9 SDK, SDR# .NET 9 x86, Python 3 and the official
-SDR# plugin SDK. Obtain the SDK from https://airspy.com/download/ and copy the
-two references into `lib/`. Run `BUILD_E_INSTALAR_TUDO.bat`. Expected output:
-`bin\x86\Release\net9.0-windows\win-x86\`.
+Use Windows 11, exact .NET SDK 9.0.316, Python 3.10+, Visual Studio 2022 or the .NET CLI, and official SDR# .NET 9 x86 SDK DLLs. Run `PREPARAR_SDK_ESTAVEL.ps1`, then `BUILD_E_INSTALAR_TUDO.bat`.

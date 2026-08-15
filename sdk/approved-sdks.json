@@ -1,0 +1,36 @@
+{
+    "schemaVersion":  2,
+    "activeHostRevision":  1921,
+    "approved":  [
+                     {
+                         "label":  "Local SDK registered against the exact SDR# host executable; final stable approval requires smoke and soak tests",
+                         "hostRevision":  1921,
+                         "registeredAt":  "2026-07-30T12:46:44.0211686Z",
+                         "hostExecutable":  {
+                                                "name":  "SDRSharp.dotnet9.exe",
+                                                "sha256":  "38fed276b5f2f4b725f2b123949ef1630d86f25367da0953b231baa2c3ebc3b8",
+                                                "length":  4541552,
+                                                "fileVersion":  "1.0.0.1921",
+                                                "productVersion":  "1.0.0.1921"
+                                            },
+                         "files":  [
+                                       {
+                                           "name":  "SDRSharp.Common.dll",
+                                           "sha256":  "1439b965eaa0b93fc8c67eb907fe945487f282ca37899eae0813cc60d39c65f7",
+                                           "length":  15872,
+                                           "assemblyVersion":  "1.0.0.0",
+                                           "fileVersion":  "1.0.0.0",
+                                           "productVersion":  "1.0.0.0"
+                                       },
+                                       {
+                                           "name":  "SDRSharp.Radio.dll",
+                                           "sha256":  "4d24c87856c59c979a415ca763ac11023e32263b8fe9a2ff763bd295ec71d7ef",
+                                           "length":  49664,
+                                           "assemblyVersion":  "1.0.0.0",
+                                           "fileVersion":  "1.0.0.0",
+                                           "productVersion":  "1.0.0.0"
+                                       }
+                                   ]
+                     }
+                 ]
+}
