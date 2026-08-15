@@ -16,14 +16,15 @@ Receive-only VDL2, AVLC and ACARS monitoring plugin for SDR# .NET 9 on Windows x
 - Responsive full-width workspaces for Aircraft, Messages, History and Diagnostics.
 - Receive-only design; no transmit/control path.
 
-## UI previews
+## UI screenshots
 
-| Overview | Aircraft details | Messages and waterfall |
+| Overview | Active aircraft | Aircraft details |
 |---|---|---|
-| ![Overview](docs/screenshots/overview-dark.png) | ![Aircraft details](docs/screenshots/aircraft-details.png) | ![Messages and waterfall](docs/screenshots/messages-waterfall.png) |
+| ![Overview](docs/screenshots/overview-dark.png) | ![Active aircraft](docs/screenshots/aircraft-active.png) | ![Aircraft details](docs/screenshots/aircraft-details.png) |
+| Messages / waterfall | History | Diagnostics |
+| ![Messages and waterfall](docs/screenshots/messages-waterfall.png) | ![History](docs/screenshots/history.png) | ![Diagnostics](docs/screenshots/diagnostics.png) |
 
-The images above are neutral UI previews and contain no usernames, local paths, receiver coordinates or captured user data.
-
+The screenshots above are real interface captures from v1.0.0. They contain no usernames, local user paths or receiver coordinates. Aircraft identifiers, message fragments and timestamps shown are reception examples captured during normal receive-only use.
 ## Requirements
 
 - Windows x86 SDR# .NET 9 host.

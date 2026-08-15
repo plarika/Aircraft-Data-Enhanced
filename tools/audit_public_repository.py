@@ -38,8 +38,11 @@ PATTERNS = {
 
 PUBLIC_IMAGE_ALLOWLIST = {
     'docs/screenshots/overview-dark.png',
+    'docs/screenshots/aircraft-active.png',
     'docs/screenshots/aircraft-details.png',
     'docs/screenshots/messages-waterfall.png',
+    'docs/screenshots/history.png',
+    'docs/screenshots/diagnostics.png',
 }
 
 LOCAL_SDK_ALLOWLIST = {
