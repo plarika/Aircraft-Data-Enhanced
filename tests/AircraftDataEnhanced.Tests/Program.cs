@@ -57,11 +57,37 @@ internal static class Program
             return SoakRunner.Run(args);
         }
 
+        var skipSdkAbi =
+            args.Any(
+                argument =>
+                    string.Equals(
+                        argument,
+                        "--skip-sdk-abi",
+                        StringComparison.OrdinalIgnoreCase));
+
+        var testsToRun =
+            skipSdkAbi
+                ? Tests
+                    .Where(
+                        test =>
+                            !string.Equals(
+                                test.Name,
+                                "Exact SDR# SDK ABI contract",
+                                StringComparison.Ordinal))
+                    .ToArray()
+                : Tests.ToArray();
+
+        if (skipSdkAbi)
+        {
+            Console.WriteLine(
+                "[SKIP] Exact SDR# SDK ABI contract: official SDR# SDK binaries are not available in public CI.");
+        }
+
         var failures =
             new List<string>();
 
         foreach (var test in
-                 Tests)
+                 testsToRun)
         {
             try
             {
@@ -85,7 +111,7 @@ internal static class Program
         if (failures.Count == 0)
         {
             Console.WriteLine(
-                $"[OK] {Tests.Count} C# regression groups passed.");
+                $"[OK] {testsToRun.Length} C# regression groups passed.");
 
             return 0;
         }

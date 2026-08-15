@@ -84,4 +84,4 @@ jobs:
 
       - name: Run C# regression suite
         shell: pwsh
-        run: dotnet run --project .\tests\AircraftDataEnhanced.Tests\AircraftDataEnhanced.Tests.csproj -c Release -p:Platform=x86 --no-build
+        run: dotnet run --project .\tests\AircraftDataEnhanced.Tests\AircraftDataEnhanced.Tests.csproj -c Release -p:Platform=x86 --no-build -- --skip-sdk-abi
